@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>KDS Blueprint | Elevating Personal‑care</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     body {
@@ -27,14 +27,14 @@
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
-    /* header / navigation */
+    /* header / navigation - MOBILE FIRST */
     .navbar {
       background: white;
       box-shadow: 0 4px 20px rgba(0, 20, 30, 0.08);
-      padding: 0.5rem 0;
+      padding: 0.8rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -42,39 +42,47 @@
 
     .navbar .container {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
+      width: 100%;
+      justify-content: center;
     }
 
     .logo-img {
-  width: 100px;  /* Increased from 60px */
-  height: 100px; /* Increased from 60px */
-  background: transparent;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+      width: 100px;
+      height: 100px;
+      background: transparent;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
 
     .logo-img img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Changed to contain to show full logo */
+      object-fit: contain;
       display: block;
     }
 
+    .logo-text-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
     .logo-text {
-      font-weight: 700;
-      font-size: 1.8rem;
-      line-height: 1.2;
+      font-weight: 800;
+      font-size: 2rem;
+      line-height: 1.1;
       letter-spacing: -0.5px;
     }
 
@@ -87,24 +95,28 @@
     }
 
     .tagline {
-      font-size: 0.85rem;
-      font-weight: 400;
+      font-size: 0.9rem;
+      font-weight: 500;
       color: #4d6a7a;
-      margin-top: 0.1rem;
+      letter-spacing: 0.3px;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
       align-items: center;
+      justify-content: center;
+      width: 100%;
     }
 
     .nav-links a {
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       color: #1a4b5e;
       transition: 0.2s;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
     }
 
     .nav-links a:hover {
@@ -114,10 +126,11 @@
     .contact-btn {
       background: #117a9e;
       color: white !important;
-      padding: 0.5rem 1.4rem;
+      padding: 0.6rem 1.4rem !important;
       border-radius: 40px;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: 0 8px 14px -8px rgba(17, 122, 158, 0.4);
+      white-space: nowrap;
     }
 
     .contact-btn:hover {
@@ -125,28 +138,28 @@
       color: white;
     }
 
-    /* HERO section */
+    /* HERO section - MOBILE FIRST */
     .hero {
       background: linear-gradient(135deg, #d7ecf5 0%, #f1f9ff 100%);
-      padding: 3.5rem 0;
+      padding: 2.5rem 0;
     }
 
     .hero .container {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 3rem;
+      flex-direction: column;
+      gap: 2rem;
     }
 
     .hero-content {
-      flex: 1 1 350px;
+      width: 100%;
+      text-align: center;
     }
 
     .hero-badge {
       background: rgba(23, 110, 138, 0.15);
       color: #115d7a;
       font-weight: 600;
-      padding: 0.3rem 1rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 30px;
       display: inline-block;
       margin-bottom: 1.5rem;
@@ -155,48 +168,52 @@
     }
 
     .hero-content h1 {
-      font-size: 3.2rem;
+      font-size: 2.5rem;
       font-weight: 800;
       line-height: 1.2;
       color: #083344;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .hero-highlight {
       color: #117a9e;
       border-bottom: 3px solid #95d0e6;
+      display: inline-block;
     }
 
     .hero-content p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #1f4b5e;
-      margin-bottom: 2.2rem;
-      max-width: 550px;
+      margin-bottom: 2rem;
     }
 
     .hero-cta {
       display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.2s;
     }
 
     .btn-primary {
       background: #117a9e;
       color: white;
-      border: none;
-      padding: 0.9rem 2.5rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
       box-shadow: 0 10px 18px -10px #117a9e;
-      transition: 0.2s;
-      text-decoration: none;
-      display: inline-block;
     }
 
     .btn-primary:hover {
-      background: #0b5f7e;
+      background: #0b5f7c;
       transform: scale(1.02);
     }
 
@@ -204,13 +221,6 @@
       background: transparent;
       border: 2px solid #117a9e;
       color: #115072;
-      padding: 0.85rem 2.2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: 0.2s;
-      text-decoration: none;
-      display: inline-block;
     }
 
     .btn-outline:hover {
@@ -218,12 +228,12 @@
     }
 
     .hero-image {
-      flex: 1 1 350px;
+      width: 100%;
+      height: 280px;
       background: #bed9e9;
       border-radius: 30px;
       box-shadow: 0 30px 30px -15px rgba(0,60,80,0.3);
       overflow: hidden;
-      height: 380px;
     }
 
     .hero-image img {
@@ -236,138 +246,145 @@
     /* tagline under hero */
     .elevating-tag {
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       font-weight: 300;
-      letter-spacing: 1px;
       color: #196480;
       background: white;
-      padding: 1.5rem 0;
+      padding: 1.5rem 1rem;
       border-bottom: 1px solid #cbe5f0;
     }
 
     .elevating-tag strong {
       font-weight: 700;
       color: #073b4f;
+      display: block;
+      margin-top: 0.3rem;
     }
 
     /* SERVICES section */
     .services {
-      padding: 5rem 0;
+      padding: 3rem 0;
       background: white;
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #073b4f;
       margin-bottom: 0.5rem;
+      text-align: center;
     }
 
     .section-sub {
       color: #3e687b;
-      font-size: 1.2rem;
-      margin-bottom: 3rem;
-      border-left: 4px solid #79c3dc;
-      padding-left: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      padding: 0 1rem;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     .service-card {
       background: #f2f9ff;
       border-radius: 28px;
-      padding: 2rem 1.8rem;
+      padding: 2rem 1.5rem;
       box-shadow: 0 10px 20px -8px rgba(17, 122, 158, 0.2);
       transition: 0.25s ease;
       border: 1px solid rgba(121, 195, 220, 0.3);
+      text-align: center;
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       background: #ffffff;
       border-color: #79c3dc;
       box-shadow: 0 20px 25px -10px #2f8eb0;
     }
 
     .service-icon {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       color: #0d6e91;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 700;
       margin-bottom: 0.75rem;
       color: #103e50;
     }
 
     .service-card p {
       color: #2f5568;
+      font-size: 1rem;
     }
 
-    /* company info / contact strip */
+    /* contact strip */
     .contact-strip {
       background: #0a3f51;
       color: white;
       padding: 2rem 0;
       text-align: center;
-      font-size: 1.3rem;
     }
 
     .contact-strip .container {
       display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
       align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
     }
 
     .contact-strip i {
       margin-right: 0.5rem;
       color: #9ad5ec;
+      width: 20px;
     }
 
     .contact-strip a {
       color: white;
       text-decoration: none;
       border-bottom: 1px dotted #b0d9ec;
+      font-size: 1.1rem;
     }
 
     .contact-strip a:hover {
       color: #d4f0ff;
     }
 
-    /* about / care LLC */
+    .contact-strip span {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* about section */
     .about-care {
       background: #edf5fa;
-      padding: 4rem 0;
+      padding: 3rem 0;
     }
 
     .about-flex {
       display: flex;
-      gap: 3rem;
+      flex-direction: column;
+      gap: 2rem;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .about-text {
-      flex: 2 1 300px;
-    }
-
-    .about-text h2 {
-      font-size: 2.2rem;
-      color: #094353;
+      width: 100%;
+      text-align: center;
     }
 
     .about-text .care-badge {
       background: #117a9e;
       color: white;
-      padding: 0.2rem 1rem;
+      padding: 0.3rem 1.2rem;
       border-radius: 30px;
       display: inline-block;
       font-size: 0.9rem;
@@ -376,11 +393,30 @@
       margin-bottom: 1rem;
     }
 
+    .about-text h2 {
+      font-size: 2rem;
+      color: #094353;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text .features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
     .about-image {
-      flex: 1 1 250px;
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
       background: #b7cfdb;
       border-radius: 30px;
-      height: 240px;
       box-shadow: 0 15px 20px -10px #1a4e63;
       overflow: hidden;
     }
@@ -400,27 +436,33 @@
 
     .footer-main {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 2rem;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     .footer-logo h3 {
       color: white;
       font-size: 2rem;
       font-weight: 700;
+      margin-bottom: 0.3rem;
     }
 
     .footer-logo p {
       color: #96bfd2;
     }
 
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
     .footer-links a {
       color: #ceeaf5;
       text-decoration: none;
-      display: block;
-      margin: 0.5rem 0;
+      font-size: 1.1rem;
     }
 
     .copyright {
@@ -428,26 +470,137 @@
       border-top: 1px solid #1f5268;
       padding-top: 1.5rem;
       color: #9cbacb;
+      font-size: 0.9rem;
     }
 
+    /* Tablet styles (min-width: 768px) */
+    @media (min-width: 768px) {
+      .navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .logo-area {
+        width: auto;
+        justify-content: flex-start;
+      }
+
+      .logo-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .logo-text {
+        font-size: 2.2rem;
+      }
+
+      .nav-links {
+        width: auto;
+        gap: 1.5rem;
+      }
+
+      .hero .container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+
+      .hero-content {
+        text-align: left;
+        flex: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .hero-cta {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .btn-primary, .btn-outline {
+        width: auto;
+      }
+
+      .hero-image {
+        flex: 1;
+        height: 380px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-strip .container {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .about-flex {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .about-text {
+        text-align: left;
+        flex: 2;
+      }
+
+      .about-text .features {
+        align-items: flex-start;
+      }
+
+      .about-image {
+        flex: 1;
+      }
+
+      .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .footer-links {
+        align-items: flex-start;
+      }
+    }
+
+    /* Desktop styles (min-width: 1024px) */
+    @media (min-width: 1024px) {
+      .logo-img {
+        width: 140px;
+        height: 140px;
+      }
+
+      .logo-text {
+        font-size: 2.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* Large desktop styles */
+    @media (min-width: 1440px) {
+      .logo-img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    /* Helper classes */
     .text-center {
       text-align: center;
     }
 
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      
-      .logo-text {
-        font-size: 1.4rem;
-      }
-      
-      .logo-img {
-        width: 50px;
-        height: 50px;
-      }
+    .mt-2 {
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -457,13 +610,13 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo-area">
-        <!-- logo image - using your actual logo -->
         <div class="logo-img">
           <img src="images/kds-logo.jpeg" alt="KDS Blueprint logo">
         </div>
-        <div>
-          <!-- Removed duplicate text since it's in the logo -->
-          <span class="logo-text"><span class="kds">KDS</span> <span class="blue">BLUEPRINT</span></span>
+        <div class="logo-text-wrapper">
+          <div class="logo-text">
+            <span class="kds">KDS</span> <span class="blue">BLUEPRINT</span>
+          </div>
           <div class="tagline">CARE LLC · PROFESSIONAL</div>
         </div>
       </div>
@@ -480,12 +633,21 @@
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
-        <span class="hero-badge"><i class="fas fa-hands-helping"></i>  Compassionate care, professionally delivered</span>
-        <h1>Do you need help <br>with your loved one? <br><span class="hero-highlight">KDS is ready</span> to offer support</h1>
+        <span class="hero-badge">
+          <i class="fas fa-hands-helping"></i> Compassionate care, professionally delivered
+        </span>
+        <h1>
+          Do you need help <br>with your loved one? <br>
+          <span class="hero-highlight">KDS is ready</span> to offer support
+        </h1>
         <p>Elevating Personal‑care through Skilled Service — every day.</p>
         <div class="hero-cta">
-          <a href="#services" class="btn-primary">Our services <i class="fas fa-arrow-right"></i></a>
-          <a href="#contact" class="btn-outline">Talk to us</a>
+          <a href="#services" class="btn-primary">
+            Our services <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-outline">
+            Talk to us
+          </a>
         </div>
       </div>
       <div class="hero-image">
@@ -497,7 +659,9 @@
   <!-- ELEVATING TAGLINE -->
   <div class="elevating-tag">
     <div class="container">
-      <i class="fas fa-star" style="color:#2b8cae;"></i>  <strong>Elevating Personal‑care through Skilled Service</strong>  <i class="fas fa-star" style="color:#2b8cae;"></i>
+      <i class="fas fa-star" style="color:#2b8cae;"></i>
+      <strong>Elevating Personal‑care through Skilled Service</strong>
+      <i class="fas fa-star" style="color:#2b8cae;"></i>
     </div>
   </div>
 
@@ -508,25 +672,65 @@
       <div class="section-sub">Every service is shaped by respect and expertise</div>
       
       <div class="services-grid">
-        <div class="service-card"><i class="fas fa-utensils service-icon"></i><h3>Meal Planning & prep</h3><p>Nutritious meals tailored to preferences and dietary needs.</p></div>
-        <div class="service-card"><i class="fas fa-bath service-icon"></i><h3>Activities of Daily Living</h3><p>Bathing, dressing, grooming — with kindness and dignity.</p></div>
-        <div class="service-card"><i class="fas fa-broom service-icon"></i><h3>Light housekeeping</h3><p>Clean, comfortable space for peace of mind.</p></div>
-        <div class="service-card"><i class="fas fa-pills service-icon"></i><h3>Medication Reminders</h3><p>Timely prompts to stay on track with health.</p></div>
-        <div class="service-card"><i class="fas fa-shopping-basket service-icon"></i><h3>Errands & grocery</h3><p>Stress‑free shopping and essential errands.</p></div>
-        <div class="service-card"><i class="fas fa-car service-icon"></i><h3>Transportation</h3><p>Safe rides to appointments, visits, and outings.</p></div>
-        <div class="service-card"><i class="fas fa-heart service-icon"></i><h3>Companionship</h3><p>Warm conversation, games, and genuine connection.</p></div>
-        <div class="service-card"><i class="fas fa-shield-alt service-icon"></i><h3>Safety Monitoring</h3><p>Observation and prevention, so you feel secure.</p></div>
+        <div class="service-card">
+          <i class="fas fa-utensils service-icon"></i>
+          <h3>Meal Planning & prep</h3>
+          <p>Nutritious meals tailored to preferences and dietary needs.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-bath service-icon"></i>
+          <h3>Activities of Daily Living</h3>
+          <p>Bathing, dressing, grooming — with kindness and dignity.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-broom service-icon"></i>
+          <h3>Light housekeeping</h3>
+          <p>Clean, comfortable space for peace of mind.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-pills service-icon"></i>
+          <h3>Medication Reminders</h3>
+          <p>Timely prompts to stay on track with health.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-shopping-basket service-icon"></i>
+          <h3>Errands & grocery</h3>
+          <p>Stress‑free shopping and essential errands.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-car service-icon"></i>
+          <h3>Transportation</h3>
+          <p>Safe rides to appointments, visits, and outings.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-heart service-icon"></i>
+          <h3>Companionship</h3>
+          <p>Warm conversation, games, and genuine connection.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-shield-alt service-icon"></i>
+          <h3>Safety Monitoring</h3>
+          <p>Observation and prevention, so you feel secure.</p>
+        </div>
       </div>
-      <p class="text-center" style="margin-top:3rem; font-size:1.2rem; color:#176986;"><i class="fas fa-phone-alt"></i> Call us today — we're ready to listen.</p>
+      <p class="text-center" style="margin-top:3rem; font-size:1.2rem; color:#176986;">
+        <i class="fas fa-phone-alt"></i> Call us today — we're ready to listen.
+      </p>
     </div>
   </section>
 
   <!-- CONTACT STRIP -->
   <div id="contact" class="contact-strip">
     <div class="container">
-      <span><i class="fas fa-phone-alt"></i> <a href="tel:6783347705">(678) 334-7705</a></span>
-      <span><i class="fas fa-envelope"></i> <a href="mailto:info.kdsblueprint@gmail.com">info.kdsblueprint@gmail.com</a></span>
-      <span><i class="fas fa-building"></i> CARE LLC · PROFESSIONAL</span>
+      <span>
+        <i class="fas fa-phone-alt"></i> <a href="tel:6783347705">(678) 334-7705</a>
+      </span>
+      <span>
+        <i class="fas fa-envelope"></i> <a href="mailto:info.kdsblueprint@gmail.com">info.kdsblueprint@gmail.com</a>
+      </span>
+      <span>
+        <i class="fas fa-building"></i> CARE LLC · PROFESSIONAL
+      </span>
     </div>
   </div>
 
@@ -536,8 +740,12 @@
       <div class="about-text">
         <span class="care-badge">CARE LLC · Est. 2020</span>
         <h2>KDS BLUEPRINT: <br>where skill meets empathy</h2>
-        <p style="font-size:1.2rem; margin: 1rem 0 1.5rem;">We are a professional personal‑care agency committed to helping families feel supported. Every caregiver is trained, screened, and truly passionate.</p>
-        <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> Licensed & insured · <i class="fas fa-check-circle" style="color:#117a9e;"></i> Custom care plans · <i class="fas fa-check-circle" style="color:#117a9e;"></i> 24/7 availability</p>
+        <p>We are a professional personal‑care agency committed to helping families feel supported. Every caregiver is trained, screened, and truly passionate.</p>
+        <div class="features">
+          <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> Licensed & insured</p>
+          <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> Custom care plans</p>
+          <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> 24/7 availability</p>
+        </div>
       </div>
       <div class="about-image">
         <img src="images/care-professional.jpeg" alt="KDS professional caregiver">
@@ -552,7 +760,9 @@
         <div class="footer-logo">
           <h3>KDS BLUEPRINT</h3>
           <p>CARE LLC · Professional</p>
-          <p style="margin-top:1rem;"><i class="fas fa-map-pin"></i> Atlanta, GA & surrounding</p>
+          <p style="margin-top:1rem;">
+            <i class="fas fa-map-pin"></i> Atlanta, GA & surrounding
+          </p>
         </div>
         <div class="footer-links">
           <p><strong>Explore</strong></p>
@@ -561,7 +771,7 @@
           <a href="#about">About us</a>
           <a href="#contact">Contact</a>
         </div>
-        <div>
+        <div class="footer-links">
           <p><strong>Reach out</strong></p>
           <p><i class="fas fa-phone"></i> (678) 334-7705</p>
           <p><i class="fas fa-envelope"></i> info.kdsblueprint@gmail.com</p>
