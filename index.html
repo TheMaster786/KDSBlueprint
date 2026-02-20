@@ -20,7 +20,6 @@
       line-height: 1.5;
     }
 
-    /* smooth scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -35,7 +34,7 @@
     .navbar {
       background: white;
       box-shadow: 0 4px 20px rgba(0, 20, 30, 0.08);
-      padding: 0.8rem 0;
+      padding: 0.5rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -57,20 +56,18 @@
     .logo-img {
       width: 60px;
       height: 60px;
-      background: #e3f0f5;
-      border-radius: 50%;
+      background: transparent;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      color: #1f6e8a;
       overflow: hidden;
     }
 
     .logo-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Changed to contain to show full logo */
       display: block;
     }
 
@@ -90,10 +87,10 @@
     }
 
     .tagline {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 400;
       color: #4d6a7a;
-      margin-top: 0.2rem;
+      margin-top: 0.1rem;
     }
 
     .nav-links {
@@ -223,7 +220,7 @@
     .hero-image {
       flex: 1 1 350px;
       background: #bed9e9;
-      border-radius: 30px 30px 30px 30px;
+      border-radius: 30px;
       box-shadow: 0 30px 30px -15px rgba(0,60,80,0.3);
       overflow: hidden;
       height: 380px;
@@ -433,9 +430,24 @@
       color: #9cbacb;
     }
 
-    /* helper */
     .text-center {
       text-align: center;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .logo-text {
+        font-size: 1.4rem;
+      }
+      
+      .logo-img {
+        width: 50px;
+        height: 50px;
+      }
     }
   </style>
 </head>
@@ -445,11 +457,12 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo-area">
-        <!-- logo image - CORRECTED to .jpeg -->
+        <!-- logo image - using your actual logo -->
         <div class="logo-img">
           <img src="images/kds-logo.jpeg" alt="KDS Blueprint logo">
         </div>
         <div>
+          <!-- Removed duplicate text since it's in the logo -->
           <span class="logo-text"><span class="kds">KDS</span> <span class="blue">BLUEPRINT</span></span>
           <div class="tagline">CARE LLC · PROFESSIONAL</div>
         </div>
@@ -463,7 +476,7 @@
     </div>
   </nav>
 
-  <!-- HERO section (home) -->
+  <!-- HERO section -->
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
@@ -476,27 +489,25 @@
         </div>
       </div>
       <div class="hero-image">
-        <!-- caregiver hero image - CORRECTED to .jpeg -->
         <img src="images/caregiver-hero.jpeg" alt="Caregiver supporting senior">
       </div>
     </div>
   </section>
 
-  <!-- ELEVATING TAGLINE (from business card) -->
+  <!-- ELEVATING TAGLINE -->
   <div class="elevating-tag">
     <div class="container">
       <i class="fas fa-star" style="color:#2b8cae;"></i>  <strong>Elevating Personal‑care through Skilled Service</strong>  <i class="fas fa-star" style="color:#2b8cae;"></i>
     </div>
   </div>
 
-  <!-- SERVICES grid (exactly the list from web2) -->
+  <!-- SERVICES section -->
   <section id="services" class="services">
     <div class="container">
       <h2 class="section-title">Personalized support, right at home</h2>
       <div class="section-sub">Every service is shaped by respect and expertise</div>
       
       <div class="services-grid">
-        <!-- using all bullets from web2.jpeg -->
         <div class="service-card"><i class="fas fa-utensils service-icon"></i><h3>Meal Planning & prep</h3><p>Nutritious meals tailored to preferences and dietary needs.</p></div>
         <div class="service-card"><i class="fas fa-bath service-icon"></i><h3>Activities of Daily Living</h3><p>Bathing, dressing, grooming — with kindness and dignity.</p></div>
         <div class="service-card"><i class="fas fa-broom service-icon"></i><h3>Light housekeeping</h3><p>Clean, comfortable space for peace of mind.</p></div>
@@ -506,11 +517,11 @@
         <div class="service-card"><i class="fas fa-heart service-icon"></i><h3>Companionship</h3><p>Warm conversation, games, and genuine connection.</p></div>
         <div class="service-card"><i class="fas fa-shield-alt service-icon"></i><h3>Safety Monitoring</h3><p>Observation and prevention, so you feel secure.</p></div>
       </div>
-      <p class="text-center" style="margin-top:3rem; font-size:1.2rem; color:#176986;"><i class="fas fa-phone-alt"></i> Call us today — we’re ready to listen.</p>
+      <p class="text-center" style="margin-top:3rem; font-size:1.2rem; color:#176986;"><i class="fas fa-phone-alt"></i> Call us today — we're ready to listen.</p>
     </div>
   </section>
 
-  <!-- CONTACT / PHONE & EMAIL STRIP (from web1) -->
+  <!-- CONTACT STRIP -->
   <div id="contact" class="contact-strip">
     <div class="container">
       <span><i class="fas fa-phone-alt"></i> <a href="tel:6783347705">(678) 334-7705</a></span>
@@ -519,7 +530,7 @@
     </div>
   </div>
 
-  <!-- ABOUT / CARE LLC + PROFESSIONAL (web1 style) -->
+  <!-- ABOUT section -->
   <section id="about" class="about-care">
     <div class="container about-flex">
       <div class="about-text">
@@ -529,13 +540,12 @@
         <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> Licensed & insured · <i class="fas fa-check-circle" style="color:#117a9e;"></i> Custom care plans · <i class="fas fa-check-circle" style="color:#117a9e;"></i> 24/7 availability</p>
       </div>
       <div class="about-image">
-        <!-- professional caregiver image - CORRECTED to .jpeg -->
         <img src="images/care-professional.jpeg" alt="KDS professional caregiver">
       </div>
     </div>
   </section>
 
-  <!-- FOOTER with name repetition -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-main">
