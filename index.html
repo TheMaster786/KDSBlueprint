@@ -445,9 +445,9 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo-area">
-        <!-- logo image placeholder - path: images/kds-logo.jpg -->
+        <!-- logo image - CORRECTED to .jpeg -->
         <div class="logo-img">
-          <img src="images/kds-logo.jpg" alt="KDS Blueprint logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-heartbeat\'></i>';">
+          <img src="images/kds-logo.jpeg" alt="KDS Blueprint logo">
         </div>
         <div>
           <span class="logo-text"><span class="kds">KDS</span> <span class="blue">BLUEPRINT</span></span>
@@ -476,8 +476,8 @@
         </div>
       </div>
       <div class="hero-image">
-        <!-- caregiver hero image - path: images/caregiver-hero.jpg -->
-        <img src="images/caregiver-hero.jpg" alt="Caregiver supporting senior" onerror="this.style.backgroundColor='#bed9e9'; this.style.display='block'; this.style.padding='2rem'; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22300%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%236faec9%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%22120%22%20font-family%3D%22Arial%22%20font-size%3D%2220%22%20fill%3D%22%23ffffff%22%3E%F0%9F%91%B5%20Elder%20care%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <!-- caregiver hero image - CORRECTED to .jpeg -->
+        <img src="images/caregiver-hero.jpeg" alt="Caregiver supporting senior">
       </div>
     </div>
   </section>
@@ -529,8 +529,8 @@
         <p><i class="fas fa-check-circle" style="color:#117a9e;"></i> Licensed & insured · <i class="fas fa-check-circle" style="color:#117a9e;"></i> Custom care plans · <i class="fas fa-check-circle" style="color:#117a9e;"></i> 24/7 availability</p>
       </div>
       <div class="about-image">
-        <!-- professional caregiver image - path: images/care-professional.jpg -->
-        <img src="images/care-professional.jpg" alt="KDS professional caregiver" onerror="this.style.backgroundColor='#a6c5d6'; this.style.display='block'; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22250%22%20height%3D%22240%22%20viewBox%3D%220%200%20250%20200%22%3E%3Crect%20width%3D%22250%22%20height%3D%22200%22%20fill%3D%22%23568fa8%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22110%22%20font-family%3D%22Arial%22%20font-size%3D%2218%22%20fill%3D%22%23ffffff%22%3E%F0%9F%91%A4%20KDS%20care%20team%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <!-- professional caregiver image - CORRECTED to .jpeg -->
+        <img src="images/care-professional.jpeg" alt="KDS professional caregiver">
       </div>
     </div>
   </section>
@@ -562,15 +562,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- small script to handle onerror image fallback gracefully (optional) -->
-  <script>
-    // if images are missing, the inline svg will show (already in onerror), but just to be safe
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function(e) {
-        console.log('image not found, fallback active');
-      });
-    });
-  </script>
 </body>
 </html>
